@@ -97,7 +97,7 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             //可以传入网页的配置
-            // template: "./src/temple.html" //网页模版，用于统一的样式
+            template: "./src/index.html" //网页模版，用于统一的样式
         }), //自动生成html文件并且引入相关的资源
     ],
     //用来设置引用模块
