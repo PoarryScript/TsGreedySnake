@@ -19,7 +19,8 @@ module.exports = {
         filename: "bundle.js",
         //配置webpack 不使用箭头函数，兼容ie
         environment: {
-            arrowFunction: false
+            arrowFunction: false,
+            const: false, //兼容低版本IE
         }
 
     },
