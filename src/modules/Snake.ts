@@ -93,8 +93,8 @@ class Snake {
             let x = (this.bodies[i - 1] as HTMLElement).offsetLeft;
             let y = (this.bodies[i - 1] as HTMLElement).offsetTop;
             //设置到当前节点身体
-            (this.bodies[i - 1] as HTMLElement).style.left = x + 'px';
-            (this.bodies[i - 1] as HTMLElement).style.top = y + 'px ';
+            (this.bodies[i] as HTMLElement).style.left = x + 'px';
+            (this.bodies[i] as HTMLElement).style.top = y + 'px ';
 
 
         }
@@ -105,7 +105,7 @@ class Snake {
      * 检查坐标是否和蛇头坐标相同
      */
     checkHeatBody() {
-        if(this.bodies.length<3){
+        if (this.bodies.length < 3) {
             return;
         }
         for (let i = 1; i++; i < this.bodies.length) {
