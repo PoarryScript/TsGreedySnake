@@ -25,6 +25,7 @@
     addScore() {
         this.score++;
         //更新UI
+        console.log("this.score=="+this.score)
         this.scoreEle.innerHTML = this.score + '';
         if (this.score % this.levelScore === 0) {
             //10分升级一次

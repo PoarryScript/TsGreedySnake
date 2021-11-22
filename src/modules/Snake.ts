@@ -105,6 +105,9 @@ class Snake {
      * 检查坐标是否和蛇头坐标相同
      */
     checkHeatBody() {
+        if(this.bodies.length<3){
+            return;
+        }
         for (let i = 1; i++; i < this.bodies.length) {
             //前面节点
             if (this.X === (this.bodies[i] as HTMLElement).offsetLeft && this.Y === (this.bodies[i] as HTMLElement).offsetTop) {
