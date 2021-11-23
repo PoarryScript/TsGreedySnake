@@ -30,12 +30,12 @@ class Snake {
     }
 
     set X(value: number) {
-        if (this.X == -value) {
+        if (this.X ===value) {
             return;
         }
 
         if (value < 0 || value > 290) {
-            throw new Error("撞墙来");
+            throw new Error("撞墙了");
         }
 
         //修改水平坐标，避免在向左移动时不能马上向右移动 反之亦然 大于等于2个节点才考虑
@@ -58,11 +58,11 @@ class Snake {
             return;
         }
         if (value < 0 || value > 290) {
-            throw new Error("撞墙来");
+            throw new Error("撞墙了");
         }
         //修改垂直坐标，避免在向左移动时不能马上向右移动 反之亦然 大于等于2个节点才考虑
         if (this.bodies[1] && (this.bodies[1] as HTMLElement).offsetTop === value) {
-            if (value > this.X) {
+            if (value > this.Y) {
                 //表示正在向下走 此时发生掉头， 禁止掉头 继续往左走
                 value = this.Y - 10;
             } else {
@@ -105,10 +105,7 @@ class Snake {
      * 检查坐标是否和蛇头坐标相同
      */
     checkHeatBody() {
-        if (this.bodies.length < 3) {
-            return;
-        }
-        for (let i = 1; i++; i < this.bodies.length) {
+        for (let i = 1;  i < this.bodies.length;i++) {
             //前面节点
             if (this.X === (this.bodies[i] as HTMLElement).offsetLeft && this.Y === (this.bodies[i] as HTMLElement).offsetTop) {
                 //头撞到来身体
